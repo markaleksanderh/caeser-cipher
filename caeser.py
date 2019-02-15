@@ -7,13 +7,17 @@ lower = ascii_lowercase
 upper = ascii_uppercase
 
 def encipher(text, rotation):
-    enciphered = []
+    # enciphered = []
+    enciphered = ''
     for i in text:
-        if i not in lower and i not in upper:
-            enciphered.append(i)
-        elif i in lower:
-            enciphered.append(lower[(lower.index(i) + rotation) % len(lower)])
+        if i in lower:
+            enciphered += lower[(lower.index(i) + rotation) % len(lower)]
+            # enciphered.append(lower[(lower.index(i) + rotation) % len(lower)])
+        elif i in upper:
+            enciphered += upper[(upper.index(i) + rotation) % len(upper)]
+            # enciphered.append(upper[(upper.index(i) + rotation) % len(upper)])
         else:
-            enciphered.append(upper[(upper.index(i) + rotation) % len(upper)])
-    enciphered = ''.join(enciphered)
+            enciphered += i
+            # enciphered.append(i)
     return enciphered
+    # return enciphered = ''.join(enciphered)
