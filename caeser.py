@@ -34,4 +34,14 @@ decipher('byly cm uh yrugjfy iz nby wuymyl wcjbyl ufailcnbg')
 
 
 def frequency_score(text):
+    # Begin with top five letter frequencies, import from full alphabetical table later
+    score = 0
+    e = 12.702
+    t = 9.056
+    a = 8.167
+    o = 7.507
+    i = 6.966
+    
+
+
     return text

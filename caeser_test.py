@@ -30,5 +30,7 @@ def test_decipher_special_characters():
     deciphered = 'H2142341ello! wor?...,,LD++'
     assert deciphered == decipher(encipher)
 
-def test_frequency_score():
-    pass
+def test_frequency_score_simple():
+    text = 'etaoi'
+    score = 0.4439800
+    return score == frequency_score(text)
