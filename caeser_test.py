@@ -18,17 +18,17 @@ def test_encipher_special_characters():
 def test_decipher_lower():
     enciphered = 'byly cm uh yrugjfy iz nby wuymyl wcjbyl ufailcnbg'
     deciphered = 'here is an example of the caeser cipher algorithm'
-    assert deciphered == decipher(encipher)
+    assert deciphered == decipher(enciphered)
 
 def test_decipher_upper():
     enciphered = 'IFMMP XPSME'
     deciphered = 'HELLO WORLD'
-    assert deciphered == decipher(encipher)
+    assert deciphered == decipher(enciphered)
 
 def test_decipher_special_characters():
     enciphered = 'O2142341lssv! dvy?...,,SK++'
     deciphered = 'H2142341ello! wor?...,,LD++'
-    assert deciphered == decipher(encipher)
+    assert deciphered == decipher(enciphered)
 
 def test_frequency_score_simple():
     text = 'etaoi'
