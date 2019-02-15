@@ -14,3 +14,8 @@ def test_encipher_special_characters():
     text = 'H2142341ello! wor?...,,LD++'
     ciphered = 'O2142341lssv! dvy?...,,SK++'
     assert ciphered == encipher(text, 7)
+
+def test_decipher_lower():
+    enciphered = 'uryyb jbeyq'
+    deciphered = 'hello world'
+    assert deciphered == decipher(encipher)
