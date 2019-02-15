@@ -36,11 +36,11 @@ decipher('byly cm uh yrugjfy iz nby wuymyl wcjbyl ufailcnbg')
 def frequency_score(text):
     # Begin with top five letter frequencies, import from full alphabetical table later
     score = 0
-    e = 12.702
-    t = 9.056
-    a = 8.167
-    o = 7.507
-    i = 6.966
-    # score = sum()
+    e = ('e', 12.702)
+    t = ('t', 9.056)
+    a = ('a', 8.167)
+    o = ('o', 7.507)
+    i = ('i', 6.966)
+    score = sum([text.count(e[0]) * e[1], text.count(t[0]) * t[1], text.count(a[0]) * a[1], text.count(o[0]) * o[1], text.count(i[0]) * i[1]])
 
-    return score
+    return round(score, 3)
