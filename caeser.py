@@ -1,13 +1,4 @@
-'''
-Top five letter frequencies in English
-e = 12.702
-t = 9.056
-a = 8.167
-o = 7.507
-i = 6.966
-Taken from:
-https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_letters_in_the_English_language
-'''
+# Frequencies from https://en.wikipedia.org/wiki/Letter_frequency
 
 from string import ascii_lowercase, ascii_uppercase
 
@@ -25,6 +16,14 @@ def encipher(text, rotation):
             enciphered += i
     return enciphered
 
+def decipher(text):
+    candidates = []
+    for i in range(len(upper)):
+        candidate = encipher(text, i)
+        candidates.append((candidate, frequency_score(candidate)))
+    candidates = sorted(candidates, key=lambda x: x[1])[::-1]
+    return candidates[0][0]
+
 def frequency_score(text):
     text = text.lower()
     score = 0
@@ -36,10 +35,15 @@ def frequency_score(text):
     score = sum([text.count(e[0]) * e[1], text.count(t[0]) * t[1], text.count(a[0]) * a[1], text.count(o[0]) * o[1], text.count(i[0]) * i[1]])
     return round(score, 3)
 
-def decipher(text):
-    candidates = []
-    for i in range(len(upper)):
-        candidate = encipher(text, i)
-        candidates.append((candidate, frequency_score(candidate)))
-    candidates = sorted(candidates, key=lambda x: x[1])[::-1]
-    return candidates[0][0]
+if __name__ == '__main__':
+    # Refactor, handle exceptions
+    prompt_choice = input("Encipher or decipher?\nEnter e for encipher, d for decipher\n")
+    prompt_text = input("Enter text:\n")
+    if prompt_choice == 'e':
+        prompt_rotation = int(input("How many positions to rotate?\n"))
+        text = encipher(prompt_text, prompt_rotation)
+    elif prompt_choice == 'd':
+        text = decipher(prompt_text)
+    else:
+        text = "Not a valid choice"
+    print(text)
