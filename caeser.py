@@ -25,16 +25,7 @@ def encipher(text, rotation):
             enciphered += i
     return enciphered
 
-def decipher(text):
-    for i in range(len(upper)):
-        print(encipher(text, i))
-    return text
-
-decipher('byly cm uh yrugjfy iz nby wuymyl wcjbyl ufailcnbg')
-
-
 def frequency_score(text):
-    # Begin with top five letter frequencies, import from full alphabetical table later
     text = text.lower()
     score = 0
     e = ('e', 12.702)
@@ -43,5 +34,12 @@ def frequency_score(text):
     o = ('o', 7.507)
     i = ('i', 6.966)
     score = sum([text.count(e[0]) * e[1], text.count(t[0]) * t[1], text.count(a[0]) * a[1], text.count(o[0]) * o[1], text.count(i[0]) * i[1]])
-
     return round(score, 3)
+
+def decipher(text):
+    candidates = []
+    for i in range(len(upper)):
+        candidate = encipher(text, i)
+        candidates.append((candidate, frequency_score(candidate)))
+    candidates = sorted(candidates, key=lambda x: x[1])[::-1]
+    return candidates[0][0]
