@@ -19,3 +19,13 @@ def test_decipher_lower():
     enciphered = 'uryyb jbeyq'
     deciphered = 'hello world'
     assert deciphered == decipher(encipher)
+
+def test_decipher_upper():
+    enciphered = 'IFMMP XPSME'
+    deciphered = 'HELLO WORLD'
+    assert deciphered == decipher(encipher)
+
+def test_decipher_special_characters():
+    enciphered = 'O2142341lssv! dvy?...,,SK++'
+    deciphered = 'H2142341ello! wor?...,,LD++'
+    assert deciphered == decipher(encipher)
