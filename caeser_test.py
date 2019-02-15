@@ -16,8 +16,8 @@ def test_encipher_special_characters():
     assert ciphered == encipher(text, 7)
 
 def test_decipher_lower():
-    enciphered = 'uryyb jbeyq'
-    deciphered = 'hello world'
+    enciphered = 'byly cm uh yrugjfy iz nby wuymyl wcjbyl ufailcnbg'
+    deciphered = 'here is an example of the caeser cipher algorithm'
     assert deciphered == decipher(encipher)
 
 def test_decipher_upper():
@@ -29,3 +29,6 @@ def test_decipher_special_characters():
     enciphered = 'O2142341lssv! dvy?...,,SK++'
     deciphered = 'H2142341ello! wor?...,,LD++'
     assert deciphered == decipher(encipher)
+
+def test_frequency_score():
+    pass

@@ -1,5 +1,13 @@
-# encipher, decipher
-# use character frequency to decipher
+'''
+Top five letter frequencies in English
+e = 12.702
+t = 9.056
+a = 8.167
+o = 7.507
+i = 6.966
+Taken from:
+https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_letters_in_the_English_language
+'''
 
 from string import ascii_lowercase, ascii_uppercase
 
@@ -18,4 +26,12 @@ def encipher(text, rotation):
     return enciphered
 
 def decipher(text):
+    for i in range(len(upper)):
+        print(encipher(text, i))
+    return text
+
+decipher('byly cm uh yrugjfy iz nby wuymyl wcjbyl ufailcnbg')
+
+
+def frequency_score(text):
     return text
