@@ -32,5 +32,10 @@ def test_decipher_special_characters():
 
 def test_frequency_score_simple():
     text = 'etaoi'
-    score = 44.39800
+    score = 44.398
+    assert score == frequency_score(text)
+
+def test_frequency_score_longer():
+    text = 'Trusted machine learning ENGINEERS'
+    score = 131.556
     assert score == frequency_score(text)
