@@ -33,4 +33,4 @@ def test_decipher_special_characters():
 def test_frequency_score_simple():
     text = 'etaoi'
     score = 0.4439800
-    return score == frequency_score(text)
+    assert score == frequency_score(text)

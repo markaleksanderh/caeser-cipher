@@ -41,7 +41,6 @@ def frequency_score(text):
     a = 8.167
     o = 7.507
     i = 6.966
-    
+    # score = sum()
 
-
-    return text
+    return score
